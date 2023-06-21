@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationControllerr : MonoBehaviour
 {
-    [SerializeField] Animator controllerr;
+     Animator controllerr;
 
 
     // Update is called once per frame

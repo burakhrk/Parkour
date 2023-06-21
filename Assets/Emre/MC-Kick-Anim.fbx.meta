@@ -80,7 +80,37 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: MC-Kick-Anim(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve.001
+      parentName: MC-Kick-Anim(Clone)
+      position: {x: -0.33294657, y: 0.33294657, z: -0.000000014901161}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: Armature
+      parentName: MC-Kick-Anim(Clone)
+      position: {x: 0.33294657, y: 0.57767594, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Bone
+      parentName: Armature
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.00000007168051, y: 0.7071068, z: -0.7071067, w: 0.000000116633416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Steve.002
+      parentName: Bone
+      position: {x: 5.9604643e-10, y: 0.0024472936, z: -1.4901166e-10}
+      rotation: {x: 0.000000116633416, y: 0.7071068, z: 0.7071067, w: 0.0000000716805}
+      scale: {x: 0.0001, y: 0.0001, z: 0.0001}
+    - name: Bone_end
+      parentName: Bone
+      position: {x: -0, y: 0.004886739, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
