@@ -372,7 +372,7 @@ namespace Etra.StarterAssets.Items
 
         }
         */
-        /*public void equipLastItem()
+        public void equipLastItem()
         {
             StartCoroutine(equipItem(usableItems.Length - 1));
         }
@@ -458,7 +458,7 @@ namespace Etra.StarterAssets.Items
             {
                 EtraCharacterMainController.Instance.GetComponentInChildren<FPSUsableItemSwayAndBobAnimations>().lockInput = false;
             }
-        }*/
+        }
 
     }
 }
