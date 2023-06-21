@@ -544,7 +544,7 @@ namespace Etra.StarterAssets
             etraAbilityManager.disableAllActiveAbilities();
             if (etraFPSUsableItemManager != null)
             {
-                etraFPSUsableItemManager.disableFPSItemInputs();
+                //etraFPSUsableItemManager.disableFPSItemInputs();
             }
         }
 
@@ -553,7 +553,7 @@ namespace Etra.StarterAssets
             etraAbilityManager.enableAllActiveAbilities();
             if (etraFPSUsableItemManager != null)
             {
-                etraFPSUsableItemManager.enableFPSItemInputs();
+                //etraFPSUsableItemManager.enableFPSItemInputs();
             }
             
         }

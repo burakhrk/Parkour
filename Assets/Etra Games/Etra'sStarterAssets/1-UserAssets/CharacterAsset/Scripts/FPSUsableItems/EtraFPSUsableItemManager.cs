@@ -241,6 +241,8 @@ namespace Etra.StarterAssets.Items
         }
 
         // Update is called once per frame
+
+        /*
         void Update()
         {
             if (inputsLocked)
@@ -265,14 +267,14 @@ namespace Etra.StarterAssets.Items
                 }
             }
 
-            if (starterAssetsInputs.item1Select)
+           /* if (starterAssetsInputs.item1Select)
             {
                 if (activeItemNum != 1 && usableItems.Length > 1)
                 {
                     StartCoroutine(equipItem(1));
                 }
-            }
-
+            }*/
+        /*
             if (starterAssetsInputs.item2Select)
             {
                 if (activeItemNum != 2 && usableItems.Length > 2)
@@ -369,8 +371,8 @@ namespace Etra.StarterAssets.Items
             }
 
         }
-
-        public void equipLastItem()
+        */
+        /*public void equipLastItem()
         {
             StartCoroutine(equipItem(usableItems.Length - 1));
         }
@@ -456,7 +458,7 @@ namespace Etra.StarterAssets.Items
             {
                 EtraCharacterMainController.Instance.GetComponentInChildren<FPSUsableItemSwayAndBobAnimations>().lockInput = false;
             }
-        }
+        }*/
 
     }
 }
