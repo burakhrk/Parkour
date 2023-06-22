@@ -27,7 +27,7 @@ public class AnimationControllerr : MonoBehaviour
 
     IEnumerator ResetAnim()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         controllerr.SetBool("Hit", false);
     }
 }
