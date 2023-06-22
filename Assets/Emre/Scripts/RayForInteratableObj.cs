@@ -24,9 +24,10 @@ public class RayForInteratableObj : MonoBehaviour
             {
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer))
+                if (Physics.Raycast(ray, out hit,2, layer))
                 {
-                    parent.gameObject.SetActive(false);
+                   hit.collider.GetComponent<Interactable>().Interact();
+                  
                 }
                    
  
