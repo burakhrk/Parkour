@@ -5,10 +5,31 @@ using DG.Tweening;
 
 public class PlatformMover : MonoBehaviour
 {
-    
+    public int PlatformNumber;
 
-    public void PlatformMove()
+
+
+
+    public void PlatformMove1()
     {
-        this.transform.DOMoveY(transform.position.y-5,2f);
+        if (PlatformNumber == 1)
+        {
+            this.transform.DOMoveY(transform.position.y - 5, 2f);
+        }
+    }
+    public void PlatformMove2()
+    {
+        if (PlatformNumber == 2)
+        {
+            this.transform.DOMoveY(transform.position.y - 5, 2f);
+        }
+    }
+    public void PlatformMove3()
+    {
+        if (PlatformNumber == 3)
+        {
+            this.transform.DOMoveY(transform.position.y-5,2f);
+        }
+        
     }
 }

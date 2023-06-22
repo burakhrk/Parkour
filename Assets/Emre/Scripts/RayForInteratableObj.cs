@@ -9,7 +9,7 @@ public class RayForInteratableObj : MonoBehaviour
 
     [SerializeField]private LayerMask layer;
 
-    public GameObject parent;
+    
 
     void Start()
     {
