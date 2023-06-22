@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class WinPortal : MonoBehaviour
 {
-    [SerializeField] LevelController levelController;
+     LevelController levelController;
 
-   
-   
+
+
+    private void Start()
+    {
+
+        levelController = FindObjectOfType<LevelController>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

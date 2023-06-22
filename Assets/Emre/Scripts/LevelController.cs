@@ -51,6 +51,7 @@ public class LevelController : MonoBehaviour
         if (Level <= levels.Length)
         {
             var go = Instantiate(levels[levelIndex - 1]);
+            go.transform.position = levels[levelIndex - 1].transform.position;
             go.transform.parent = transform;
             go.SetActive(true);
             //  levels[levelIndex - 1].SetActive(true);
@@ -82,7 +83,7 @@ public class LevelController : MonoBehaviour
     }
     public void Restart()
     {
-        Player.transform.position = Vector3.zero;
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
         LosePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
@@ -93,4 +94,11 @@ public class LevelController : MonoBehaviour
 
     }
 
+
+
+    public void LosePanelActivate()
+    {
+        LosePanel.SetActive(true);
+    }
+    
 }

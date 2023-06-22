@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class DangerZone : MonoBehaviour
 {
@@ -10,7 +11,13 @@ public class DangerZone : MonoBehaviour
 
     public GameObject LosePanel;
 
+    LevelController levelController;
 
+    private void Start()
+    {
+        starterAssetsInputs = FindObjectOfType<StarterAssetsInputs>().GetComponent<StarterAssetsInputs>();
+        levelController = FindObjectOfType<LevelController>();
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -24,7 +31,7 @@ public class DangerZone : MonoBehaviour
     void Fail()
     {
         Time.timeScale = 0f;
-         LosePanel.SetActive(true);
+        levelController.LosePanelActivate();
         Cursor.lockState = CursorLockMode.None;
     }
 }
