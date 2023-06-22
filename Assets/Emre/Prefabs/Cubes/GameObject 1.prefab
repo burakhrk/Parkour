@@ -47,12 +47,13 @@ GameObject:
   - component: {fileID: 7483934423509876706}
   - component: {fileID: 7483934422240857973}
   - component: {fileID: 7483934422240857972}
+  - component: {fileID: 6252800033746709943}
   m_Layer: 0
   m_Name: Cube_GroundWGrass (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7483934423509876706
 Transform:
@@ -119,6 +120,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6252800033746709943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483934422240857975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000005, z: 1}
+  m_Center: {x: -0.000000074505806, y: 0.50000024, z: -0.00000031292439}
 --- !u!1 &7483934423280862690
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,12 +144,13 @@ GameObject:
   - component: {fileID: 7483934422600100689}
   - component: {fileID: 7483934422600100695}
   - component: {fileID: 7483934422600100694}
+  - component: {fileID: 3622128694702397809}
   m_Layer: 0
   m_Name: Cube_GroundWGrass (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7483934422600100689
 Transform:
@@ -202,6 +217,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3622128694702397809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483934423280862690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000005, z: 1}
+  m_Center: {x: -0.000000074505806, y: 0.50000024, z: -0.00000031292439}
 --- !u!1 &7483934423857868570
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,12 +241,13 @@ GameObject:
   - component: {fileID: 7483934423110833117}
   - component: {fileID: 7483934423857868568}
   - component: {fileID: 7483934423857868571}
+  - component: {fileID: 1178368327653488189}
   m_Layer: 0
   m_Name: Cube_GroundWGrass (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7483934423110833117
 Transform:
@@ -285,6 +314,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1178368327653488189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483934423857868570}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000005, z: 1}
+  m_Center: {x: -0.000000074505806, y: 0.50000024, z: -0.00000031292439}
 --- !u!1 &7483934423905307792
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,12 +338,13 @@ GameObject:
   - component: {fileID: 7483934422832064426}
   - component: {fileID: 7483934422832064424}
   - component: {fileID: 7483934422832064427}
+  - component: {fileID: 5294713291015491581}
   m_Layer: 0
   m_Name: Cube_GroundWGrass (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7483934422832064426
 Transform:
@@ -368,6 +411,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5294713291015491581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483934423905307792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000005, z: 1}
+  m_Center: {x: -0.000000074505806, y: 0.50000024, z: -0.00000031292439}
 --- !u!1001 &7483934423599600419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -381,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1892310713830552, guid: b4e691ef9e6b61f4780f0e4c45c28b86, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4839790739169704, guid: b4e691ef9e6b61f4780f0e4c45c28b86, type: 3}
       propertyPath: m_RootOrder
@@ -422,3 +478,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4839790739169704, guid: b4e691ef9e6b61f4780f0e4c45c28b86, type: 3}
   m_PrefabInstance: {fileID: 7483934423599600419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7483574926685757371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1892310713830552, guid: b4e691ef9e6b61f4780f0e4c45c28b86, type: 3}
+  m_PrefabInstance: {fileID: 7483934423599600419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4369303010881536711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483574926685757371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000005, z: 1}
+  m_Center: {x: -0.000000074505806, y: 0.50000024, z: -0.00000031292439}
