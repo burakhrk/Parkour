@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 1
-  platform: {fileID: 8592644582648877452}
+  platformMover: {fileID: 9013094063552965816}
 --- !u!1 &6760990911937900092
 GameObject:
   m_ObjectHideFlags: 0
