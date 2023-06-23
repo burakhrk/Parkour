@@ -9,7 +9,14 @@ public class LevelController : MonoBehaviour
 
     public GameObject Player;
     public GameObject LosePanel;
+    public GameObject WinPanel;
+    GameObject cursor;
 
+    
+    public List<GameObject> achievements;
+
+    int a;
+    
 
     [SerializeField] GameObject[] levels;
     [SerializeField] bool playSpecificLevel = false;
@@ -18,9 +25,9 @@ public class LevelController : MonoBehaviour
     public TextMeshProUGUI Leveltext;
     private void Awake()
     {
+        cursor=FindObjectOfType<Cursorr>().gameObject;
 
-
-       
+        a = Random.Range(0, achievements.Count);
         if (playSpecificLevel)
         {
             ActivateLevel();
@@ -76,29 +83,55 @@ public class LevelController : MonoBehaviour
     }
     public void NextLevel()
     {
+        
         PlayerPrefs.SetInt("Level", Level + 1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
+        cursor.SetActive(true);
+
     }
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1f;
         LosePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        cursor.SetActive(true);
+
     }
     public void LoadMenu()
     {
         SceneManager.LoadScene(0);
-
+        Time.timeScale = 1f;
     }
 
 
 
     public void LosePanelActivate()
     {
+        Time.timeScale = 0f;
+
+        cursor.SetActive(false );
         LosePanel.SetActive(true);
     }
     
+    IEnumerator ActivateAchievements() 
+    { 
+
+        achievements[a].SetActive(true);
+        yield return new WaitForSeconds(1f);
+        achievements[a].SetActive(false);
+
+    }
+
+    public void ActivateWinPanel()
+    {
+        Time.timeScale = 0f;
+        StartCoroutine(ActivateAchievements());
+        cursor.SetActive(false);
+
+        WinPanel.SetActive(true);   
+    }
+
 }

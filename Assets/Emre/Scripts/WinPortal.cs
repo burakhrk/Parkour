@@ -7,10 +7,14 @@ public class WinPortal : MonoBehaviour
      LevelController levelController;
 
 
+  
+
+    
 
     private void Start()
     {
-
+       
+        
         levelController = FindObjectOfType<LevelController>();
     }
 
@@ -18,7 +22,8 @@ public class WinPortal : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            levelController.NextLevel();
+           
+            levelController.ActivateWinPanel();
         }
     }
 }
