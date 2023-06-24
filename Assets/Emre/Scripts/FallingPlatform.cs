@@ -30,7 +30,7 @@ public class FallingPlatform : MonoBehaviour
             {
                 this.gameObject.transform.DOPunchRotation(Vector3.down, 2, 33, 88).OnComplete(() =>
                 {
-                    Debug.Log("asdasd1231f");
+                    
                     this.transform.DOMoveY(transform.position.y - 15, 3f);
                 }
             );

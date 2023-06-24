@@ -111,7 +111,8 @@ public class LevelController : MonoBehaviour
     public void LosePanelActivate()
     {
         Time.timeScale = 0f;
-
+        
+        Cursor.lockState = CursorLockMode.None;
         cursor.SetActive(false );
         LosePanel.SetActive(true);
     }
@@ -127,6 +128,8 @@ public class LevelController : MonoBehaviour
 
     public void ActivateWinPanel()
     {
+        cursor.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         StartCoroutine(ActivateAchievements());
         cursor.SetActive(false);
