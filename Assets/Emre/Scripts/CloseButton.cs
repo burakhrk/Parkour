@@ -24,5 +24,4 @@ public class CloseButton : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true); 
     }
-
 }

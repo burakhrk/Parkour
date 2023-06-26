@@ -2024,10 +2024,10 @@ MonoBehaviour:
   - {fileID: 1347596336}
   - {fileID: 2071091741}
   levels:
-  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
-  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
-  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
-  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
+  - {fileID: 1789710420831759428}
+  - {fileID: 1789710420831759428}
+  - {fileID: 1789710420831759428}
+  - {fileID: 1789710420831759428}
   playSpecificLevel: 1
   Level: 10
   Leveltext: {fileID: 527884491}
@@ -2639,6 +2639,67 @@ Transform:
   m_Father: {fileID: 8724706217670931597}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.98021, y: 0, z: 0}
+--- !u!1001 &471432882561303880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2187774771653814540, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_Name
+      value: LWL18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814540, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187774771653814543, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
 --- !u!1 &548314821133995202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,6 +2716,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1789710420831759428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187774771653814540, guid: 0b731e76088ea6b488373a77f9e61b55, type: 3}
+  m_PrefabInstance: {fileID: 471432882561303880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2033868947294746727
 Transform:
   m_ObjectHideFlags: 0
@@ -3866,7 +3932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityEnabled: 1
   JumpHeight: 1.2
-  JumpTimeout: 0.05
+  JumpTimeout: 0.01
   jumpShakeEnabled: 1
   jumpingShake: {x: 1, y: 0.1}
   lockJump: 0
