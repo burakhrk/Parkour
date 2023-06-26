@@ -2024,24 +2024,12 @@ MonoBehaviour:
   - {fileID: 1347596336}
   - {fileID: 2071091741}
   levels:
-  - {fileID: 2177724508965571324, guid: d9885be3db344cd4dbf5246c50223984, type: 3}
-  - {fileID: 8592644583104561531, guid: 17632b0eb5db0d64ca261039302b9830, type: 3}
-  - {fileID: 4991431937257877552, guid: 20595ec69a0e34b46bca011b679ea272, type: 3}
-  - {fileID: 2715262625812016225, guid: 0b22e59e5f54e13429c759de3b972ffb, type: 3}
-  - {fileID: 552770623629410413, guid: 77643c5fe57c196499c635f59be4d7b9, type: 3}
-  - {fileID: 3927609310761368968, guid: b5b467dd3403cc74dbdebfccc26bb329, type: 3}
-  - {fileID: 1419584943109114474, guid: a4364627e3cfb7745b63cec960cd518d, type: 3}
-  - {fileID: 5524658060893048832, guid: 7a4418420f8735b4984da26f31ba0284, type: 3}
-  - {fileID: 8785809222265076110, guid: b45eb9ab0b842a540b1e9620d43f4426, type: 3}
-  - {fileID: 5972640934671514353, guid: ada6442f1e2d5f44b85247d9390294ae, type: 3}
-  - {fileID: 3501934565537757669, guid: 5a7df8a0ec517c14a9a334fd452f0f26, type: 3}
-  - {fileID: 694285153429843171, guid: 4930b0352f607f0429f82357bfc24e27, type: 3}
-  - {fileID: 1319050787954748501, guid: 3982f5b5a062ca246b915ea8a71fbd0d, type: 3}
-  - {fileID: 8574621660019517101, guid: 020fc067292c8754680f670d99f05468, type: 3}
-  - {fileID: 4473146607932727493, guid: adabc4cee4dae074a8a8b24053fabb8d, type: 3}
-  - {fileID: 3685209904924727024, guid: 8cbbaa8fef58d5646ad5b1f51c24112b, type: 3}
-  playSpecificLevel: 0
-  Level: 11
+  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
+  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
+  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
+  - {fileID: 4697517930383141612, guid: b2876eae796dfd745bef2e3a5895e591, type: 3}
+  playSpecificLevel: 1
+  Level: 10
   Leveltext: {fileID: 527884491}
   levelIndex: 0
 --- !u!4 &1717296746
