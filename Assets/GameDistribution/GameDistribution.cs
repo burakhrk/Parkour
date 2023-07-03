@@ -42,7 +42,7 @@ public class GameDistribution : MonoBehaviour
         Init();
     }
 
-    void Init()
+    public void Init()
     {
         try
         {
