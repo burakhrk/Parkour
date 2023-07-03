@@ -14,7 +14,13 @@ public class AdHelper : MonoBehaviour
         _adManager.Init();
     }
 
-     void ShowAdd()
+    private void Start()
+    {
+        ShowIntersAd();
+    }
+
+
+    void ShowAdd()
     {
         _adManager.InterstatialAdManager.ShowAd();
         Cursor.lockState = CursorLockMode.None;

@@ -7,7 +7,7 @@ using TMPro;
 public class LevelController : MonoBehaviour
 {
 
-    
+    public GameObject LWLText;
 
     public GameObject Player;
     public GameObject LosePanel;
@@ -125,7 +125,7 @@ public class LevelController : MonoBehaviour
     public void LosePanelActivate()
     {
         Time.timeScale = 0f;
-        
+        LWLText.SetActive(false);
         //Cursor.lockState = CursorLockMode.None;
         cursor.SetActive(false );
         LosePanel.SetActive(true);
@@ -142,6 +142,8 @@ public class LevelController : MonoBehaviour
 
     public void ActivateWinPanel()
     {
+        LWLText.SetActive(false);
+
         cursor.SetActive(false);
        // Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;

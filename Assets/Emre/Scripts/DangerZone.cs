@@ -9,7 +9,7 @@ public class DangerZone : MonoBehaviour
 {
     [SerializeField]StarterAssetsInputs starterAssetsInputs;
 
-    public GameObject LosePanel;
+    
 
     LevelController levelController;
 

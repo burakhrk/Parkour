@@ -14,7 +14,9 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        _adManager.InterstatialAdManager.ShowAd();
+        Cursor.lockState = CursorLockMode.None;
+
+        ShowAd();
     }
 
     public void PlayButton()
@@ -22,4 +24,10 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(1);
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void ShowAd()
+    {
+        _adManager.InterstatialAdManager.ShowAd();
+    }
+
 }
