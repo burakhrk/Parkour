@@ -81,7 +81,7 @@ public class YandexRewardedAdManager : IRewardedAdManager
 
     public void ShowAd()
     {
-
+        YandexGame.Instance._RewardedShow(1);
     }
 
     public void TerminateAd()

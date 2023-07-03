@@ -28,7 +28,7 @@ public class YandexInterstatialAdManager : IInterstatialAdManager
 
     public void RegisterIronSourceInterstatialEvents()
     {
-        YandexGame.CloseFullAdEvent += OnAdClosed;
+         YandexGame.CloseFullAdEvent += OnAdClosed;
         YandexGame.OpenFullAdEvent += OnAdOpened;
         YandexGame.ErrorFullAdEvent += OnAdFailed;
     }
@@ -70,8 +70,8 @@ public class YandexInterstatialAdManager : IInterstatialAdManager
 
     public void ShowAd()
     {
-        YandexGame.FullscreenShow();
-    }
+        YandexGame.Instance._FullscreenShow();
+     }
 
     public void TerminateAd()
     {
