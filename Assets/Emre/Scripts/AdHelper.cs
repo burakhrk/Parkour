@@ -35,7 +35,12 @@ public class AdHelper : MonoBehaviour
             _adManager.InterstatialAdManager.RegisterOnAdClosedEvent(OnAdClosed);
             ShowAdd();
         }
-       
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+
+        }
+
     }
     private void OnAdClosed(IronSourceAdInfo info)
     {

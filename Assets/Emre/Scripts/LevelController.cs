@@ -101,7 +101,7 @@ public class LevelController : MonoBehaviour
         PlayerPrefs.SetInt("Level", Level + 1);
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
 
     }
@@ -110,7 +110,7 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
         LosePanel.SetActive(false);
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
 
     }
