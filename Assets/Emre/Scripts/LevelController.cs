@@ -101,7 +101,7 @@ public class LevelController : MonoBehaviour
         PlayerPrefs.SetInt("Level", Level + 1);
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
 
     }
@@ -110,7 +110,7 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
         LosePanel.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
 
     }
@@ -126,7 +126,7 @@ public class LevelController : MonoBehaviour
     {
         Time.timeScale = 0f;
         
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
         cursor.SetActive(false );
         LosePanel.SetActive(true);
     }
@@ -143,7 +143,7 @@ public class LevelController : MonoBehaviour
     public void ActivateWinPanel()
     {
         cursor.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
+       // Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         StartCoroutine(ActivateAchievements());
         cursor.SetActive(false);
