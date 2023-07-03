@@ -15,7 +15,7 @@ public class LevelController : MonoBehaviour
     GameObject cursor;
 
     
-    public List<GameObject> achievements;
+    //public List<GameObject> achievements;
 
     int a;
     
@@ -29,7 +29,7 @@ public class LevelController : MonoBehaviour
     {
         cursor=FindObjectOfType<Cursorr>().gameObject;
 
-        a = Random.Range(0, achievements.Count);
+        //a = Random.Range(0, achievements.Count);
         if (playSpecificLevel)
         {
             ActivateLevel();
@@ -126,7 +126,7 @@ public class LevelController : MonoBehaviour
     {
         Time.timeScale = 0f;
         LWLText.SetActive(false);
-        //Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;
         cursor.SetActive(false );
         LosePanel.SetActive(true);
     }
@@ -134,9 +134,9 @@ public class LevelController : MonoBehaviour
     IEnumerator ActivateAchievements() 
     { 
 
-        achievements[a].SetActive(true);
+       // achievements[a].SetActive(true);
         yield return new WaitForSeconds(1f);
-        achievements[a].SetActive(false);
+        //achievements[a].SetActive(false);
 
     }
 
@@ -145,9 +145,9 @@ public class LevelController : MonoBehaviour
         LWLText.SetActive(false);
 
         cursor.SetActive(false);
-       // Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
-        StartCoroutine(ActivateAchievements());
+        //StartCoroutine(ActivateAchievements());
         cursor.SetActive(false);
 
         WinPanel.SetActive(true);   
