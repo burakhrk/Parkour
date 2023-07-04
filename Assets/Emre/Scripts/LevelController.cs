@@ -7,6 +7,9 @@ using TMPro;
 public class LevelController : MonoBehaviour
 {
 
+    public AudioSource DeathSound;
+    public AudioSource WinSound;
+
     public GameObject LWLText;
 
     public GameObject Player;
@@ -124,6 +127,7 @@ public class LevelController : MonoBehaviour
 
     public void LosePanelActivate()
     {
+        DeathSound.Play();
         Time.timeScale = 0f;
         LWLText.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
@@ -143,7 +147,7 @@ public class LevelController : MonoBehaviour
     public void ActivateWinPanel()
     {
         LWLText.SetActive(false);
-
+        WinSound.Play();
         cursor.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
