@@ -14,6 +14,8 @@ public class CloseButton : MonoBehaviour
     ABILITY_CameraMovement cameraMovement;
     ABILITY_Jump jump;
 
+
+    public Image ImageParent;
     public Image Image;
 
     private void Start()
@@ -43,16 +45,16 @@ public class CloseButton : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
 
-        Image.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
+        ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
         yield return new WaitForSeconds(1f);
         Image.color = Color.green;
-        Image.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f,2,1);
+        ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f,2,1);
         yield return new WaitForSeconds(1f);
         Image.color = Color.red;
-        Image.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
+        ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
         yield return new WaitForSeconds(1f);
         Image.color = Color.red;
-        Image.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
+        ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
         yield return new WaitForSeconds(2f);
         ClosePanel();
 
