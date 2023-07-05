@@ -16,14 +16,14 @@ public class AdHelper : MonoBehaviour
 
     private void Start()
     {
-        ShowIntersAd();
+       // ShowIntersAd();
     }
 
 
     void ShowAdd()
     {
         _adManager.InterstatialAdManager.ShowAd();
-        Cursor.lockState = CursorLockMode.None;
+        
 
     }
 
@@ -32,12 +32,14 @@ public class AdHelper : MonoBehaviour
     {
         if (_adManager.InterstatialAdManager.IsInterstatialAdReady())
         {
+            
+
             _adManager.InterstatialAdManager.RegisterOnAdClosedEvent(OnAdClosed);
             ShowAdd();
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.lockState = CursorLockMode.Locked;
 
         }
 
@@ -45,7 +47,7 @@ public class AdHelper : MonoBehaviour
     private void OnAdClosed(IronSourceAdInfo info)
     {
         _adManager.InterstatialAdManager.UnRegisterOnAdClosedEvent(OnAdClosed);
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 
         Debug.Log("OnAdClosed");
     }

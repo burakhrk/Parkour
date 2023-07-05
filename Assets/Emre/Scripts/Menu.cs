@@ -21,8 +21,9 @@ public class Menu : MonoBehaviour
 
     public void PlayButton()
     {
+        ShowAd();
         SceneManager.LoadScene(1);
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ShowAd()
