@@ -32,6 +32,6 @@ public class DangerZone : MonoBehaviour
     {
         Time.timeScale = 0f;
         levelController.LosePanelActivate();
-        Cursor.lockState = CursorLockMode.None;
+        
     }
 }

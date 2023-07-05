@@ -17,6 +17,8 @@ public class LevelController : MonoBehaviour
     public GameObject WinPanel;
     GameObject cursor;
 
+
+    bool gameEnd = false;
     
     //public List<GameObject> achievements;
 
@@ -52,7 +54,7 @@ public class LevelController : MonoBehaviour
 
     private void Start()
     {
-            Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 
@@ -123,13 +125,25 @@ public class LevelController : MonoBehaviour
     public void LosePanelActivate()
     {
         DeathSound.Play();
-        Time.timeScale = 0f;
         LWLText.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
+        
+        Time.timeScale = 0f;
         cursor.SetActive(false );
         LosePanel.SetActive(true);
+        gameEnd = true;
     }
-    
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus&& gameEnd)
+        {
+        
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+    }
+
     IEnumerator ActivateAchievements() 
     { 
 
@@ -141,10 +155,15 @@ public class LevelController : MonoBehaviour
 
     public void ActivateWinPanel()
     {
+
+        gameEnd = true;
+
         LWLText.SetActive(false);
         WinSound.Play();
         cursor.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
+        
+
         Time.timeScale = 0f;
         //StartCoroutine(ActivateAchievements());
         cursor.SetActive(false);
