@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
 
-        ShowAd();
+       // ShowAd();
     }
 
     public void PlayButton()
