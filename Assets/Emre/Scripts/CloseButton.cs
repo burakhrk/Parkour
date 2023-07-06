@@ -43,7 +43,7 @@ public class CloseButton : MonoBehaviour
 
     IEnumerator ChangeColor()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1.5f);
 
         ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
         yield return new WaitForSeconds(1f);

@@ -98,7 +98,6 @@ public class LevelController : MonoBehaviour
     public void NextLevel()
     {
         
-        PlayerPrefs.SetInt("Level", Level + 1);
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
        // Cursor.lockState = CursorLockMode.Locked;
@@ -155,6 +154,7 @@ public class LevelController : MonoBehaviour
 
     public void ActivateWinPanel()
     {
+        PlayerPrefs.SetInt("Level", Level + 1);
 
         gameEnd = true;
 
