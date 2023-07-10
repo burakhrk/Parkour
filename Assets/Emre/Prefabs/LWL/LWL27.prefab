@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555979492754867825}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.64, y: -1.48, z: 7.802}
+  m_LocalPosition: {x: -3.64, y: -1.76, z: 4.27}
   m_LocalScale: {x: 1, y: 5.79, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PervanePrefab: {fileID: 555979492754867825}
-  PervaneSpeed: 0.1
 --- !u!1 &2935716028822253814
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +518,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1348887928436102, guid: d12d113e882a99f44aee5e022cf41f8c, type: 3}
   m_PrefabInstance: {fileID: 555979493157596016}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &65862514682249002
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555058385643347702}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &555979493157596021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -530,7 +545,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25000018, z: 0.9999997}
+  m_Size: {x: 1, y: 0.77, z: 0.9999997}
   m_Center: {x: 0, y: -0.00000023841858, z: -0.000000014901161}
 --- !u!4 &556681321198052742 stripped
 Transform:
