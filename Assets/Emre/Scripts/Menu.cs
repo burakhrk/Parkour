@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject LWLSelectPanel;
+
     [SerializeField] AdManager _adManager;
 
     private void Awake()
@@ -31,4 +33,15 @@ public class Menu : MonoBehaviour
         _adManager.InterstatialAdManager.ShowAd();
     }
 
+
+
+    public void ActivateLWLSelecetPanel()
+    {
+        LWLSelectPanel.SetActive(true);
+    }
+
+    public void CloseLWLSelecetPanel()
+    {
+        LWLSelectPanel.SetActive(false);
+    }
 }
