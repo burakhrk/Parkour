@@ -2,17 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] AdManager _adManager;
     [SerializeField] GameObject page1, page2, page3;
 
     [SerializeField] List<LevelSelect> LevelSelectButtons;
     [SerializeField] List<Sprite> LevelSelectSprites;
 
+    [SerializeField] int lastUnlockedLevel;
+
     private void Awake()
     {
+        FindLastUnlockedLevel();
         InitButtons();
         OpenPage1();
+    }
+    void FindLastUnlockedLevel()
+    {
+        if (PlayerPrefs.HasKey("LevelUnlocked"))
+            lastUnlockedLevel = PlayerPrefs.GetInt("LevelUnlocked");
+        else
+            lastUnlockedLevel = 1;
+
+        for (int i = 0; i < lastUnlockedLevel; i++)
+        {
+            LevelSelectButtons[i].Unlock();
+        }
     }
     void InitButtons()
     {
@@ -21,6 +38,14 @@ public class MenuController : MonoBehaviour
             LevelSelectButtons[i].Init(LevelSelectSprites[i],i+1);
         }
     }
+   public void Play(int levelIndex)
+    {
+         _adManager.InterstatialAdManager.ShowAd();
+        SceneManager.LoadScene(1);
+        //Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    
     public void OpenPage1()
     {
         page1.SetActive(true);

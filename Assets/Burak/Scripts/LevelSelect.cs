@@ -32,9 +32,8 @@ public class LevelSelect : MonoBehaviour
     }
 
     public void LevelSelected()
-
     {
-
+        FindObjectOfType<MenuController>().Play(levelIndex);
     }
     
 }
