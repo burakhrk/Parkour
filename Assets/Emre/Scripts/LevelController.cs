@@ -143,18 +143,16 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    IEnumerator ActivateAchievements() 
-    { 
 
-       // achievements[a].SetActive(true);
-        yield return new WaitForSeconds(1f);
-        //achievements[a].SetActive(false);
-
+    public void SetLewel()
+    {
+        PlayerPrefs.SetInt("Level", Level + 1);
     }
+
 
     public void ActivateWinPanel()
     {
-        PlayerPrefs.SetInt("Level", Level + 1);
+        SetLewel();
 
         gameEnd = true;
 

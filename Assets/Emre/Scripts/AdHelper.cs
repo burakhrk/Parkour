@@ -7,7 +7,7 @@ public class AdHelper : MonoBehaviour
 {
 
     public AdManager _adManager;
-
+    public LevelController _levelController;
 
     private void Awake()
     {
@@ -51,6 +51,48 @@ public class AdHelper : MonoBehaviour
 
         Debug.Log("OnAdClosed");
     }
-   
+
+    bool _isRewardEarned=false;
+
+    public void ShowRewardAd()
+    {
+
+
+        if (_adManager.RewardedAdManager.IsRewardedAdReady())
+        {
+            _adManager.RewardedAdManager.RegisterOnUserEarnedRewarededEvent(OnUserEarnedReward);
+            _adManager.RewardedAdManager.RegisterOnAdClosedEvent(OnRewardedAdClosed);
+
+            ShowRewardedAd();
+        }
+       
+    }
+    private void OnRewardedAdClosed(IronSourceAdInfo info)
+    {
+
+        _adManager.RewardedAdManager.UnRegisterOnUserEarnedRewarededEvent(OnUserEarnedReward);
+        _adManager.RewardedAdManager.UnRegisterOnAdClosedEvent(OnRewardedAdClosed);
+
+        if (_isRewardEarned)
+        {
+            _levelController.NextLevel();
+        }
+
+        _isRewardEarned = false;
+        
+
+
+    }
+    private void OnUserEarnedReward(IronSourcePlacement placement, IronSourceAdInfo info)
+    {
+        _isRewardEarned = true;
+        
+    }
+
+    private void ShowRewardedAd()
+    {
+
+        _adManager.RewardedAdManager.ShowAd();
+    }
 
 }
