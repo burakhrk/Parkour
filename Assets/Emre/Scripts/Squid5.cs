@@ -5,7 +5,7 @@ using DG.Tweening;
 using UnityEngine.UI;
 using Etra.StarterAssets.Abilities;
 
-public class CloseButton : MonoBehaviour
+public class Squid5 : MonoBehaviour
 {
     [SerializeField] GameObject InfoPanel;
     GameObject cursor;
@@ -53,9 +53,15 @@ public class CloseButton : MonoBehaviour
         Image.color = Color.red;
         ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
         yield return new WaitForSeconds(1f);
+        Image.color = Color.green;
+        ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
+        yield return new WaitForSeconds(1f);
         Image.color = Color.red;
         ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        Image.color = Color.green;
+        ImageParent.rectTransform.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), 1f, 2, 1);
+        yield return new WaitForSeconds(1f);
         ClosePanel();
 
     }
