@@ -949,7 +949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -163.7}
+  m_AnchoredPosition: {x: 0, y: -72.98}
   m_SizeDelta: {x: 283, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980638126
@@ -1223,7 +1223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -74.2}
+  m_AnchoredPosition: {x: 0, y: -162.4}
   m_SizeDelta: {x: 283, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032647703
@@ -2462,8 +2462,8 @@ MonoBehaviour:
   - {fileID: 8574621660019517101, guid: 020fc067292c8754680f670d99f05468, type: 3}
   - {fileID: 8531181180521749843, guid: d40ad57d8f3e126418de558734eb1130, type: 3}
   - {fileID: 4171755133295091973, guid: 0d6593906a582c544b013dfa042311d0, type: 3}
-  playSpecificLevel: 0
-  Level: 11
+  playSpecificLevel: 1
+  Level: 29
   Leveltext: {fileID: 527884491}
   levelIndex: 0
 --- !u!4 &1717296746
