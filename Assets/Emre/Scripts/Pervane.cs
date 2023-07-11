@@ -6,7 +6,6 @@ using DG.Tweening;
 public class Pervane : MonoBehaviour
 {
     
-    public GameObject PervanePrefab;
 
 
 
