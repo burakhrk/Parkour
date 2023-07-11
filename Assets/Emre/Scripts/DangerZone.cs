@@ -7,15 +7,14 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class DangerZone : MonoBehaviour
 {
-    [SerializeField]StarterAssetsInputs starterAssetsInputs;
-
+    
     
 
     LevelController levelController;
 
     private void Start()
     {
-        starterAssetsInputs = FindObjectOfType<StarterAssetsInputs>().GetComponent<StarterAssetsInputs>();
+        
         levelController = FindObjectOfType<LevelController>();
     }
 
