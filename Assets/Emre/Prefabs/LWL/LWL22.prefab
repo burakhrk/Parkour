@@ -3587,6 +3587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Engel
       objectReference: {fileID: 0}
+    - target: {fileID: 4104038065476482789, guid: 8cca9544ecb2f3c41bed6f349a16407c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5144770272456244945, guid: 8cca9544ecb2f3c41bed6f349a16407c, type: 3}
       propertyPath: m_RootOrder
       value: 2

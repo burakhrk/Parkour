@@ -15,7 +15,7 @@ public class CircleSteel : MonoBehaviour
     public void MoveRight()
     {
 
-        this.gameObject.transform.DORotateQuaternion(Quaternion.Euler(-100, 90, 0), 2f).SetEase(Ease.Linear).OnComplete(() =>
+        this.gameObject.transform.DORotateQuaternion(Quaternion.Euler(-100, 90, 0), 1.7f).SetEase(Ease.Linear).OnComplete(() =>
         {
             ResetRotation();
         });
@@ -24,7 +24,7 @@ public class CircleSteel : MonoBehaviour
 
     public void ResetRotation()
     {
-        this.gameObject.transform.DORotateQuaternion(Quaternion.Euler(-230, 90, 0), 2f).SetEase(Ease.Linear).OnComplete(() =>
+        this.gameObject.transform.DORotateQuaternion(Quaternion.Euler(-230, 90, 0), 1.7f).SetEase(Ease.Linear).OnComplete(() =>
         {
             ResetRotation2();
         });
@@ -33,7 +33,7 @@ public class CircleSteel : MonoBehaviour
 
     public void ResetRotation2()
     {
-        this.gameObject.transform.DORotateQuaternion(Quaternion.Euler(-360, 90, 0), 2f).SetEase(Ease.Linear).OnComplete(() =>
+        this.gameObject.transform.DORotateQuaternion(Quaternion.Euler(-360, 90, 0), 1.7f).SetEase(Ease.Linear).OnComplete(() =>
         {
             MoveRight();
         });
