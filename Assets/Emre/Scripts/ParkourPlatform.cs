@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class ParkourPlatform : MonoBehaviour
 {
-    
+
+    public float x = 4f;
 
     public bool LeftRight=true;
 
@@ -44,7 +45,7 @@ public class ParkourPlatform : MonoBehaviour
 
     public void MoveRight()
     {
-        this.gameObject.transform.DOMoveX(4,4f).SetEase(Ease.Linear).OnComplete(() =>
+        this.gameObject.transform.DOMoveX(4,x).SetEase(Ease.Linear).OnComplete(() =>
         {
             MoveLeft();
         });
@@ -52,7 +53,7 @@ public class ParkourPlatform : MonoBehaviour
 
     public void MoveLeft()
     {
-        this.gameObject.transform.DOMoveX(-4, 4f).SetEase(Ease.Linear).OnComplete(() =>
+        this.gameObject.transform.DOMoveX(-4, x).SetEase(Ease.Linear).OnComplete(() =>
         {
             MoveRight();
         });
@@ -60,14 +61,14 @@ public class ParkourPlatform : MonoBehaviour
 
     public void MoveUp()
     {
-        this.gameObject.transform.DOMoveY(transform.position.y+3, 4f).SetEase(Ease.Linear).OnComplete(() =>
+        this.gameObject.transform.DOMoveY(transform.position.y+3, x).SetEase(Ease.Linear).OnComplete(() =>
         {
             MoveDown();
         });
     }
     public void MoveDown()
     {
-        this.gameObject.transform.DOMoveY(transform.position.y - 3, 4f).SetEase(Ease.Linear).OnComplete(() =>
+        this.gameObject.transform.DOMoveY(transform.position.y - 3, x).SetEase(Ease.Linear).OnComplete(() =>
         {
             MoveUp();
         });
