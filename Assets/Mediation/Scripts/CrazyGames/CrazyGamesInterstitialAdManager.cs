@@ -148,5 +148,10 @@ public class CrazyGamesInterstitialAdManager : IInterstatialAdManager
         Time.timeScale = 1f;
         OnInterstatialAdClosed?.Invoke(null);
     }
+
+    public void RegisterOnAdShowFailedEvent()
+    {
+        throw new NotImplementedException();
+    }
 }
 #endif

@@ -50,6 +50,11 @@ public class NoAdsInterstatialAdManager : IInterstatialAdManager
      
     }
 
+    public void RegisterOnAdShowFailedEvent()
+    {
+        throw new NotImplementedException();
+    }
+
     public void RegisterOnAdShowSucceededEvent(Action<IronSourceAdInfo> method)
     {
       

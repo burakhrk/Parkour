@@ -95,6 +95,7 @@ public interface IInterstatialAdManager
     public bool IsInterstatialAdReady();
     public void ShowAd();
     public void RegisterIronSourceInterstatialEvents();
+    void RegisterOnAdShowFailedEvent();
     #endregion
 }
 

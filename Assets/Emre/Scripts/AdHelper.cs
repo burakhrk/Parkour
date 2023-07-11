@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,24 +33,43 @@ public class AdHelper : MonoBehaviour
     {
         if (_adManager.InterstatialAdManager.IsInterstatialAdReady())
         {
-
-           
+            _adManager.InterstatialAdManager.RegisterOnAdShowFailedEvent(OnAdClosed3);
+            _adManager.InterstatialAdManager.RegisterOnAdLoadFailedEvent(OnAdClosed2);
             _adManager.InterstatialAdManager.RegisterOnAdClosedEvent(OnAdClosed);
             ShowAdd();
         }
         else
         {
+            Time.timeScale = 1f;
             _levelController.NextLevel();
-
         }
 
     }
+
+    private void OnAdClosed2(IronSourceError error)
+    {
+        _adManager.InterstatialAdManager.UnRegisterOnAdShowFailedEvent(OnAdClosed3);
+        _adManager.InterstatialAdManager.UnRegisterOnAdLoadFailedEvent(OnAdClosed2);
+        _adManager.InterstatialAdManager.UnRegisterOnAdClosedEvent(OnAdClosed);
+        Time.timeScale = 1f;
+    }
+    private void OnAdClosed3(IronSourceError error, IronSourceAdInfo info)
+    {
+        _adManager.InterstatialAdManager.UnRegisterOnAdShowFailedEvent(OnAdClosed3);
+        _adManager.InterstatialAdManager.UnRegisterOnAdLoadFailedEvent(OnAdClosed2);
+        _adManager.InterstatialAdManager.UnRegisterOnAdClosedEvent(OnAdClosed);
+        Time.timeScale = 1f;
+
+    }
+
+
     private void OnAdClosed(IronSourceAdInfo info)
     {
+        _adManager.InterstatialAdManager.UnRegisterOnAdShowFailedEvent(OnAdClosed3);
+        _adManager.InterstatialAdManager.UnRegisterOnAdLoadFailedEvent(OnAdClosed2);
         _adManager.InterstatialAdManager.UnRegisterOnAdClosedEvent(OnAdClosed);
-        //Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
 
-        Debug.Log("OnAdClosed");
     }
 
     bool _isRewardEarned=false;
@@ -60,7 +80,6 @@ public class AdHelper : MonoBehaviour
 
         if (_adManager.RewardedAdManager.IsRewardedAdReady())
         {
-            _levelController.SetLewel();
             _adManager.RewardedAdManager.RegisterOnUserEarnedRewarededEvent(OnUserEarnedReward);
             _adManager.RewardedAdManager.RegisterOnAdClosedEvent(OnRewardedAdClosed);
 
@@ -86,6 +105,8 @@ public class AdHelper : MonoBehaviour
     }
     private void OnUserEarnedReward(IronSourcePlacement placement, IronSourceAdInfo info)
     {
+        _levelController.SetLewel();
+
         _isRewardEarned = true;
         
     }
