@@ -6,8 +6,10 @@ using TMPro;
 public class LevelSelect : MonoBehaviour
 {
     Button button;
-    Image image;
- [SerializeField]    int levelIndex;
+   [SerializeField] Image image;
+    [SerializeField] Image bgimage;
+
+    [SerializeField]    int levelIndex;
   
     public void Init(Sprite _sprite , int _index,GameObject levelText )
     {
@@ -16,7 +18,7 @@ public class LevelSelect : MonoBehaviour
         GameObject go = Instantiate(levelText, transform);
         go.GetComponent<TextMeshProUGUI>().text = "Level " + levelIndex.ToString();
 
-        image = GetComponent<Image>();
+         
         image.sprite = _sprite;
 
         button = GetComponent<Button>();
