@@ -147,6 +147,11 @@ public class LevelController : MonoBehaviour
     public void SetLewel()
     {
         PlayerPrefs.SetInt("Level", Level + 1);
+
+        if(PlayerPrefs.GetInt("LevelUnlocked",1)<Level+1)
+        {
+            PlayerPrefs.SetInt("LevelUnlocked",Level+1);
+        }
     }
 
 
