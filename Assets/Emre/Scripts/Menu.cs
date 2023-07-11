@@ -23,6 +23,19 @@ public class Menu : MonoBehaviour
 
     public void PlayButton()
     {
+        if (PlayerPrefs.HasKey("LevelUnlocked"))
+        {
+            var a  = PlayerPrefs.GetInt("LevelUnlocked", 1);
+            PlayerPrefs.SetInt("Level",a);
+
+        }
+        else
+        {
+             
+            PlayerPrefs.SetInt("Level", 1);
+        }
+           
+
         ShowAd();
         SceneManager.LoadScene(1);
         //Cursor.lockState = CursorLockMode.Locked;

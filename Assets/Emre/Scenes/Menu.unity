@@ -7090,7 +7090,43 @@ MonoBehaviour:
   - {fileID: 1579534392}
   - {fileID: 878868896}
   - {fileID: 2133552239}
-  LevelSelectSprites: []
+  LevelSelectSprites:
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
+  - {fileID: 21300000, guid: c827a0af9d3769844b5d0be45f9f5b51, type: 3}
   lastUnlockedLevel: 0
 --- !u!4 &1136933978
 Transform:
@@ -12381,6 +12417,10 @@ PrefabInstance:
     - target: {fileID: 1578990923, guid: 6af79a5325a0565429b2fc4a464aaba2, type: 3}
       propertyPath: _gameDistribution
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253768460573569520, guid: 6af79a5325a0565429b2fc4a464aaba2, type: 3}
+      propertyPath: _isNoAdd
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1253768460573569521, guid: 6af79a5325a0565429b2fc4a464aaba2, type: 3}
       propertyPath: m_RootOrder

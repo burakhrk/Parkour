@@ -15,8 +15,8 @@ public class MenuController : MonoBehaviour
 
     private void Awake()
     {
-        FindLastUnlockedLevel();
         InitButtons();
+        FindLastUnlockedLevel();
         OpenPage1();
     }
     void FindLastUnlockedLevel()
@@ -42,10 +42,11 @@ public class MenuController : MonoBehaviour
     {
          _adManager.InterstatialAdManager.ShowAd();
         SceneManager.LoadScene(1);
+          PlayerPrefs.SetInt("Level", levelIndex);
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
-    
+
     public void OpenPage1()
     {
         page1.SetActive(true);
