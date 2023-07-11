@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class LevelSelect : MonoBehaviour
 {
     Button button;
     Image image;
-     int levelIndex;
+ [SerializeField]    int levelIndex;
   
-    public void Init(Sprite _sprite , int _index )
+    public void Init(Sprite _sprite , int _index,GameObject levelText )
     {
-        levelIndex = _index;
+            levelIndex = _index;
+
+        GameObject go = Instantiate(levelText, transform);
+        go.GetComponent<TextMeshProUGUI>().text = "Level " + levelIndex.ToString();
 
         image = GetComponent<Image>();
         image.sprite = _sprite;

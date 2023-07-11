@@ -12,7 +12,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] List<Sprite> LevelSelectSprites;
 
     [SerializeField] int lastUnlockedLevel;
-
+    [SerializeField] GameObject levelText;
     private void Awake()
     {
         InitButtons();
@@ -35,7 +35,7 @@ public class MenuController : MonoBehaviour
     {
         for (int i = 0; i < LevelSelectButtons.Count; i++)
         {
-            LevelSelectButtons[i].Init(LevelSelectSprites[i],i+1);
+            LevelSelectButtons[i].Init(LevelSelectSprites[i],i+1,levelText);
         }
     }
    public void Play(int levelIndex)
