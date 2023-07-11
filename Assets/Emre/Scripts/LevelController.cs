@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using CrazyGames;
 
 public class LevelController : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-
+        CrazySDK.Instance.GameplayStart();
     }
 
 
@@ -137,6 +138,8 @@ public class LevelController : MonoBehaviour
 
     public void LosePanelActivate()
     {
+        CrazySDK.Instance.GameplayStop();
+
         DeathSound.Play();
         LWLText.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
@@ -172,6 +175,8 @@ public class LevelController : MonoBehaviour
 
     public void ActivateWinPanel()
     {
+        CrazySDK.Instance.GameplayStop();
+
         SetLewel();
 
         gameEnd = true;

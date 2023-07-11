@@ -29,7 +29,7 @@ public class CrazyGamesInterstitialAdManager : IInterstatialAdManager
         _adInstance = CrazyAds.Instance;
         _sdkInstance = CrazySDK.Instance;
 
-        _sdkInstance.GameplayStart();
+        
 
     }
 
@@ -45,7 +45,7 @@ public class CrazyGamesInterstitialAdManager : IInterstatialAdManager
 
     public void RegisterIronSourceInterstatialEvents()
     {
-        _adInstance.OnAdClosed += OnAdClosed;
+         _adInstance.OnAdClosed += OnAdClosed;
         _adInstance.OnAdOpened += OnAdOpened;
     }
 

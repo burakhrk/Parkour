@@ -86,17 +86,16 @@ public class AdHelper : MonoBehaviour
             ShowRewardedAd();
         }
        
+       
     }
     private void OnRewardedAdClosed(IronSourceAdInfo info)
     {
+        _levelController.SetLewel();
 
         _adManager.RewardedAdManager.UnRegisterOnUserEarnedRewarededEvent(OnUserEarnedReward);
         _adManager.RewardedAdManager.UnRegisterOnAdClosedEvent(OnRewardedAdClosed);
 
-        if (_isRewardEarned)
-        {
-            _levelController.NextLevel();
-        }
+        _levelController.NextLevel();
 
         _isRewardEarned = false;
         
@@ -105,7 +104,6 @@ public class AdHelper : MonoBehaviour
     }
     private void OnUserEarnedReward(IronSourcePlacement placement, IronSourceAdInfo info)
     {
-        _levelController.SetLewel();
 
         _isRewardEarned = true;
         
