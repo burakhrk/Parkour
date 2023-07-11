@@ -32,14 +32,14 @@ public class AdHelper : MonoBehaviour
     {
         if (_adManager.InterstatialAdManager.IsInterstatialAdReady())
         {
-            
 
+           
             _adManager.InterstatialAdManager.RegisterOnAdClosedEvent(OnAdClosed);
             ShowAdd();
         }
         else
         {
-           // Cursor.lockState = CursorLockMode.Locked;
+            _levelController.NextLevel();
 
         }
 
@@ -60,6 +60,7 @@ public class AdHelper : MonoBehaviour
 
         if (_adManager.RewardedAdManager.IsRewardedAdReady())
         {
+            _levelController.SetLewel();
             _adManager.RewardedAdManager.RegisterOnUserEarnedRewarededEvent(OnUserEarnedReward);
             _adManager.RewardedAdManager.RegisterOnAdClosedEvent(OnRewardedAdClosed);
 

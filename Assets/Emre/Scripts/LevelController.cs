@@ -59,6 +59,20 @@ public class LevelController : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        if (LosePanel.activeSelf==true)
+        {
+            Cursor.lockState= CursorLockMode.None;
+        }
+
+        if (WinPanel.activeSelf == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+
     public int levelIndex;
     void ActivateLevel()
     {
@@ -152,6 +166,7 @@ public class LevelController : MonoBehaviour
         {
             PlayerPrefs.SetInt("LevelUnlocked",Level+1);
         }
+        
     }
 
 

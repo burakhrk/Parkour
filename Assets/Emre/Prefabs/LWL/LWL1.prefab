@@ -735,8 +735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74248d7b080bda4494db3491898d875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterAssetsInputs: {fileID: 0}
-  LosePanel: {fileID: 0}
 --- !u!1 &8367919948394513160
 GameObject:
   m_ObjectHideFlags: 0
