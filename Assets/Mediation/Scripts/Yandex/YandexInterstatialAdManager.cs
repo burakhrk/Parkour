@@ -133,5 +133,10 @@ public class YandexInterstatialAdManager : IInterstatialAdManager
     {
         OnAdFailedEvent?.Invoke(null);
     }
+
+    public void RegisterOnAdShowFailedEvent()
+    {
+        throw new NotImplementedException();
+    }
 }
 #endif
