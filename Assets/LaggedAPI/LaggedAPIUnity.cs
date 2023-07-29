@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
-#if LAGGED
+
 public class LaggedAPIUnity : MonoBehaviour
 {
 
@@ -36,14 +36,7 @@ public class LaggedAPIUnity : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void SDK_PlayRewardAd();
 
-    //void Awake()
-    //{
-
-
-    //    Init();
-    //}
-
-    public void Init()
+    void Awake()
     {
         if (LaggedAPIUnity.Instance == null)
             LaggedAPIUnity.Instance = this;
@@ -52,6 +45,11 @@ public class LaggedAPIUnity : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
+        Init();
+    }
+
+    public void Init()
+    {
         try
         {
             SDK_Init(DEV_ID, PUBLISHER_ID);
@@ -174,4 +172,3 @@ public class LaggedAPIUnity : MonoBehaviour
     }
 
 }
-#endif
