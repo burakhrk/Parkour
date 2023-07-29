@@ -158,7 +158,6 @@ namespace CrazyGames
             CrazySDK.Instance.DebugLog("Ad Error: " + error);
             completedAdRequest(CrazySDKEvent.adError);
             OnAdError?.Invoke();
-            Time.timeScale = 1f;
         }
 
         private void AdFinished()

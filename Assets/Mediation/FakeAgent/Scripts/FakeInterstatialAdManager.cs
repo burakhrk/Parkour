@@ -122,9 +122,4 @@ public class FakeInterstatialAdManager : IInterstatialAdManager
     {
         _interstatialAdRegisterator.OnAdShowSucceededEvent -= method;
     }
-
-    public void RegisterOnAdShowFailedEvent()
-    {
-        throw new NotImplementedException();
-    }
 }

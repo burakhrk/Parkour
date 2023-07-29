@@ -148,9 +148,4 @@ public class IronsSourceInterstatialAdManager : IInterstatialAdManager
         IronSourceInterstitialEvents.onAdShowFailedEvent -= _interstatialAdRegisterator.FireOnAdShowFailedEvent;
         IronSourceInterstitialEvents.onAdShowSucceededEvent -= _interstatialAdRegisterator.FireOnAdShowSucceededEvent;
     }
-
-    public void RegisterOnAdShowFailedEvent()
-    {
-        throw new NotImplementedException();
-    }
 }
