@@ -56,7 +56,7 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        CrazySDK.Instance.GameplayStart();
+        
     }
 
 
@@ -138,7 +138,7 @@ public class LevelController : MonoBehaviour
 
     public void LosePanelActivate()
     {
-        CrazySDK.Instance.GameplayStop();
+        
 
         DeathSound.Play();
         LWLText.SetActive(false);
@@ -175,7 +175,6 @@ public class LevelController : MonoBehaviour
 
     public void ActivateWinPanel()
     {
-        CrazySDK.Instance.GameplayStop();
 
         SetLewel();
 

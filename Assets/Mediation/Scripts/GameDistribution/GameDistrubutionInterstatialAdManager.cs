@@ -145,6 +145,11 @@ public class GameDistrubutionInterstatialAdManager : IInterstatialAdManager
         OnAdClosedEvent?.Invoke(null);
     }
 
+    public void RegisterOnAdShowFailedEvent()
+    {
+        throw new NotImplementedException();
+    }
+
     #endregion
 }
 
