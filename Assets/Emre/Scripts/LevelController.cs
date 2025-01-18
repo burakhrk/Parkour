@@ -106,9 +106,9 @@ public class LevelController : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene(1);
         Time.timeScale = 1f;
-        LosePanel.SetActive(false);
+        SceneManager.LoadScene(1);
+        //LosePanel.SetActive(false);
         //Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
 

@@ -7,30 +7,49 @@ public class Interactable : MonoBehaviour
 
     public int i;
 
-    
+    public bool workOnce = false;
     
    [SerializeField] PlatformMover platformMover;
-
+    bool asd = false;
    
 
     public void Interact()
      {
+      
         InteractableObj1();
-        
-       
     }
 
    
 
     public void InteractableObj1()
     {
-       if(i == 1)
+        if(workOnce)
         {
-            this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(90,-90,0));
-            platformMover.PlatformMove();
+            if (asd)
+            {
+                return;
+            }
+            if (i == 1)
+            {
+                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(90, -90, 0));
+                platformMover.PlatformMove();
 
-            Debug.Log("1");
+                Debug.Log("1");
+                asd = true ;
+            }
+            
         }
+        else
+        {
+            if (i == 1)
+            {
+                this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(90, -90, 0));
+                platformMover.PlatformMove();
+
+                Debug.Log("1");
+            }
+        }
+      
         
     }
 
