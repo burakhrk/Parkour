@@ -22,7 +22,7 @@ namespace Etra.StarterAssets.Source.Combat
 
         private void Start()
         {
-            bulletRigidbody.velocity = transform.forward * bulletSpeed;
+            bulletRigidbody.linearVelocity = transform.forward * bulletSpeed;
             Invoke("DestoryAfterTime", 10f);
         }
 

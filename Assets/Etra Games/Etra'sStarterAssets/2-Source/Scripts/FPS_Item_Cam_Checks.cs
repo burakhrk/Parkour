@@ -21,7 +21,7 @@ namespace Etra.StarterAssets.Source
                 Debug.LogError("New layer EtraFPSUsableItem must be created and assigned in Layer Manager so FPSUsableItems can be seen by the FPSUsableItemsCamera and Player.");
             }
 
-            var renderPipelineAsset = GraphicsSettings.renderPipelineAsset;
+            var renderPipelineAsset = GraphicsSettings.defaultRenderPipeline;
 
             if (renderPipelineAsset != null)
             {

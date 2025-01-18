@@ -1,4 +1,4 @@
-using Cinemachine;
+using Unity.Cinemachine;
 using Etra.StarterAssets.Abilities;
 using Etra.StarterAssets.Abilities.FirstPerson;
 using Etra.StarterAssets.Interactables.Enemies;
@@ -278,7 +278,7 @@ namespace Etra.StarterAssets
             handheldNormal = Resources.Load<NoiseSettings>("HandheldNormal");
 
             etraFollowCam = GameObject.Find("Etra'sStarterAssetsFollowCamera");
-            etraFollowCam.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_NoiseProfile = shake;
+            etraFollowCam.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().NoiseProfile = shake;
         }
 
         private void AssignAnimationIDs()

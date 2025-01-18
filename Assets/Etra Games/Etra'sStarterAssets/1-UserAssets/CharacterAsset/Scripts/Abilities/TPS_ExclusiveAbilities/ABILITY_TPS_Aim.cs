@@ -1,4 +1,4 @@
-using Cinemachine;
+using Unity.Cinemachine;
 using Etra.StarterAssets.Input;
 using Etra.StarterAssets.Source;
 using Etra.StarterAssets.Source.Camera;
