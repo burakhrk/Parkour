@@ -108,11 +108,11 @@ namespace Etra.StarterAssets.Abilities
                                 springJoint.connectedAnchor = Vector3.zero;
                                 springJoint.anchor = Vector3.zero;
 
-                                originalAngularDrag = pickedUpObject.angularDrag;
-                                originalDrag = pickedUpObject.drag;
+                                originalAngularDrag = pickedUpObject.angularDamping;
+                                originalDrag = pickedUpObject.linearDamping;
 
-                                pickedUpObject.angularDrag = pickedUpDrag;
-                                pickedUpObject.drag = pickedUpDrag;
+                                pickedUpObject.angularDamping = pickedUpDrag;
+                                pickedUpObject.linearDamping = pickedUpDrag;
                             }
                         }
                     }
@@ -128,8 +128,8 @@ namespace Etra.StarterAssets.Abilities
                     damageSender.objectDamage = (int)pickedUpObject.GetComponent<Rigidbody>().mass;
 
                     Destroy(springJoint);
-                    pickedUpObject.angularDrag = originalAngularDrag;
-                    pickedUpObject.drag = originalDrag;
+                    pickedUpObject.angularDamping = originalAngularDrag;
+                    pickedUpObject.linearDamping = originalDrag;
                     pickedUpObject = null;
                     secondInteractCheck = true;
                 }

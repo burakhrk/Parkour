@@ -1,4 +1,4 @@
-using Cinemachine;
+using Unity.Cinemachine;
 using Etra.StarterAssets.Source;
 using EtrasStarterAssets;
 using System.Collections;

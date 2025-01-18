@@ -108,11 +108,11 @@ namespace Etra.StarterAssets.Items
                                 springJoint.connectedAnchor = Vector3.zero;
                                 springJoint.anchor = Vector3.zero;
 
-                                originalAngularDrag = pickedUpObject.angularDrag;
-                                originalDrag = pickedUpObject.drag;
+                                originalAngularDrag = pickedUpObject.angularDamping;
+                                originalDrag = pickedUpObject.linearDamping;
 
-                                pickedUpObject.angularDrag = pickedUpDrag;
-                                pickedUpObject.drag = pickedUpDrag;
+                                pickedUpObject.angularDamping = pickedUpDrag;
+                                pickedUpObject.linearDamping = pickedUpDrag;
                                 fpsItemAudioManager.Play("GrabberSuck");
                             }
                         }
@@ -121,8 +121,8 @@ namespace Etra.StarterAssets.Items
                 else
                 {
                     Destroy(springJoint);
-                    pickedUpObject.angularDrag = originalAngularDrag;
-                    pickedUpObject.drag = originalDrag;
+                    pickedUpObject.angularDamping = originalAngularDrag;
+                    pickedUpObject.linearDamping = originalDrag;
                     pickedUpObject = null;
                 }
             }
@@ -132,8 +132,8 @@ namespace Etra.StarterAssets.Items
                 if (pickedUpObject != null)
                 {
                     Destroy(springJoint);
-                    pickedUpObject.angularDrag = originalAngularDrag;
-                    pickedUpObject.drag = originalDrag;
+                    pickedUpObject.angularDamping = originalAngularDrag;
+                    pickedUpObject.linearDamping = originalDrag;
 
                     var damageSender = pickedUpObject.gameObject.AddComponent<ThrownObjectDamageSender>();
                     damageSender.objectDamage = (int)pickedUpObject.GetComponent<Rigidbody>().mass;

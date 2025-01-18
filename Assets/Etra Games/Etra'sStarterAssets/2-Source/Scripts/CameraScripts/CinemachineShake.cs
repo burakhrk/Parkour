@@ -1,5 +1,5 @@
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 
 namespace Etra.StarterAssets.Source.Camera
 {
@@ -27,7 +27,7 @@ namespace Etra.StarterAssets.Source.Camera
             var cinemachineBasicMultiChannelPerlin =
                 cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
-            cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+            cinemachineBasicMultiChannelPerlin.AmplitudeGain = intensity;
 
             startingIntensity = intensity;
             shakeTimerTotal = time;
@@ -42,7 +42,7 @@ namespace Etra.StarterAssets.Source.Camera
             var cinemachineBasicMultiChannelPerlin =
                 cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
-            cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+            cinemachineBasicMultiChannelPerlin.AmplitudeGain = intensity;
 
             startingIntensity = intensity;
             shakeTimerTotal = time;
@@ -53,7 +53,7 @@ namespace Etra.StarterAssets.Source.Camera
         private void Update()
         {
             //Make sure the live camera has the shake
-            if (CinemachineCore.Instance.IsLive(cinemachineVirtualCamera))
+            if (CinemachineCore.IsLive(cinemachineVirtualCamera))
             {
                 if (Instance != this)
                 {
@@ -70,7 +70,7 @@ namespace Etra.StarterAssets.Source.Camera
                     var cinemachineBasicMultiChannelPerlin =
                     cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
-                    cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
+                    cinemachineBasicMultiChannelPerlin.AmplitudeGain = 0f;
                     Mathf.Lerp(startingIntensity, 0, 1 - shakeTimer / shakeTimerTotal);
                 }
             }
