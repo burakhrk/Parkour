@@ -11,7 +11,7 @@ public class AdHelper : MonoBehaviour
 
     private void Awake()
     {
-        _adManager.Init();
+      //  _adManager.Init();
     }
 
     private void Start()
@@ -22,7 +22,7 @@ public class AdHelper : MonoBehaviour
 
     void ShowAdd()
     {
-        _adManager.InterstatialAdManager.ShowAd();
+     //   _adManager.InterstatialAdManager.ShowAd();
         
 
     }
@@ -30,6 +30,7 @@ public class AdHelper : MonoBehaviour
 
     public void ShowIntersAd()
     {
+        /*
         if (_adManager.InterstatialAdManager.IsInterstatialAdReady())
         {
             
@@ -42,11 +43,12 @@ public class AdHelper : MonoBehaviour
            // Cursor.lockState = CursorLockMode.Locked;
 
         }
+        */
 
     }
-    private void OnAdClosed(IronSourceAdInfo info)
+    private void OnAdClosed()
     {
-        _adManager.InterstatialAdManager.UnRegisterOnAdClosedEvent(OnAdClosed);
+       // _adManager.InterstatialAdManager.UnRegisterOnAdClosedEvent(OnAdClosed);
         //Cursor.lockState = CursorLockMode.Locked;
 
         Debug.Log("OnAdClosed");
@@ -56,7 +58,7 @@ public class AdHelper : MonoBehaviour
 
     public void ShowRewardAd()
     {
-
+        /*
 
         if (_adManager.RewardedAdManager.IsRewardedAdReady())
         {
@@ -65,11 +67,12 @@ public class AdHelper : MonoBehaviour
 
             ShowRewardedAd();
         }
+        */
        
     }
-    private void OnRewardedAdClosed(IronSourceAdInfo info)
+    private void OnRewardedAdClosed()
     {
-
+        /*
         _adManager.RewardedAdManager.UnRegisterOnUserEarnedRewarededEvent(OnUserEarnedReward);
         _adManager.RewardedAdManager.UnRegisterOnAdClosedEvent(OnRewardedAdClosed);
 
@@ -81,9 +84,9 @@ public class AdHelper : MonoBehaviour
         _isRewardEarned = false;
         
 
-
+        */
     }
-    private void OnUserEarnedReward(IronSourcePlacement placement, IronSourceAdInfo info)
+    private void OnUserEarnedReward()
     {
         _isRewardEarned = true;
         
@@ -92,7 +95,7 @@ public class AdHelper : MonoBehaviour
     private void ShowRewardedAd()
     {
 
-        _adManager.RewardedAdManager.ShowAd();
+      //  _adManager.RewardedAdManager.ShowAd();
     }
 
 }

@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
 
     private void Awake()
     {
-        _adManager.Init();
+        //_adManager.Init();
     }
 
     private void Start()
@@ -43,7 +43,7 @@ public class Menu : MonoBehaviour
 
     public void ShowAd()
     {
-        _adManager.InterstatialAdManager.ShowAd();
+       // _adManager.InterstatialAdManager.ShowAd();
     }
 
 

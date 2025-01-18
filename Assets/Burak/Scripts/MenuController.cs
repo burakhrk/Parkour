@@ -40,7 +40,7 @@ public class MenuController : MonoBehaviour
     }
    public void Play(int levelIndex)
     {
-         _adManager.InterstatialAdManager.ShowAd();
+        // _adManager.InterstatialAdManager.ShowAd();
         SceneManager.LoadScene(1);
           PlayerPrefs.SetInt("Level", levelIndex);
         //Cursor.lockState = CursorLockMode.Locked;
