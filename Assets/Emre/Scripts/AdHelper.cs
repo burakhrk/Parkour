@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class AdHelper : MonoBehaviour
 {
-    GameMonetize gm;
-    public AdManager _adManager;
+     public AdManager _adManager;
     public LevelController _levelController;
 
     private void Awake()
     {
       //  _adManager.Init();
-      gm=FindFirstObjectByType<GameMonetize>();
+     // gm=FindFirstObjectByType<GameMonetize>();
     }
 
     private void Start()
@@ -23,14 +22,14 @@ public class AdHelper : MonoBehaviour
 
     void ShowAdd()
     {
-        gm.ShowAd();
+       // gm.ShowAd();
 
     }
 
 
     public void ShowIntersAd()
     {
-        gm.ShowAd();
+       // gm.ShowAd();
 
         /*
         if (_adManager.InterstatialAdManager.IsInterstatialAdReady())
@@ -60,7 +59,7 @@ public class AdHelper : MonoBehaviour
 
     public void ShowRewardAd()
     {
-       gm.ShowAd();
+      // gm.ShowAd();
         _levelController.NextLevel();
 
         /*

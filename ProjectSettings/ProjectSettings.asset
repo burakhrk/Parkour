@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Phenomenal Games
-  productName: Noob Parkour Challenge 3D
+  productName: Noob Parkour 3D
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -462,10 +462,21 @@ PlayerSettings:
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
   m_TemplateCustomTags:
+    ADSGRAM_BLOCK_ID: '-'
     BACKGROUND: 
+    FACEBOOK_PLACEMENT_ID: '-'
+    GAME_DISTRIBUTION_GAME_ID: '-'
+    LAGGED_DEV_ID: '-'
+    LAGGED_PUBLISHER_ID: '-'
     OPTIMIZE_FOR_PIXEL_ART: 
+    OVERLAY_BACKGROUND_COLOR: '-'
     PRODUCT_DESCRIPTION: 
+    PROGRESS_BAR_BACKGROUND_COLOR: '-'
+    PROGRESS_BAR_FILL_COLOR: '-'
     SCALE_TO_FIT: 1920:1080
+    Y8_ADSENSE_ID: '-'
+    Y8_CHANNEL_ID: '-'
+    Y8_GAME_ID: '-'
   mobileMTRendering:
     Android: 1
     iPhone: 1
@@ -723,7 +734,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:BetterMinimal
+  webGLTemplate: PROJECT:Bridge
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 2
