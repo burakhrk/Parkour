@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using Playgama;
 public class LevelController : MonoBehaviour
 {
 
@@ -30,10 +30,15 @@ public class LevelController : MonoBehaviour
     public int Level;
     GameObject activeLevel;
     public TextMeshProUGUI Leveltext;
+   public static bool isGamePlayStarted = false;
     private void Awake()
     {
-        cursor=FindObjectOfType<Cursorr>().gameObject;
-
+        cursor=FindFirstObjectByType<Cursorr>().gameObject;
+        if(!isGamePlayStarted)
+        {
+            isGamePlayStarted = true;
+            Bridge.platform.SendMessage(Playgama.Modules.Platform.PlatformMessage.GameplayStarted); 
+        }
         //a = Random.Range(0, achievements.Count);
         if (playSpecificLevel)
         {

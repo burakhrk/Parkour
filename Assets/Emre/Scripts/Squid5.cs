@@ -20,13 +20,13 @@ public class Squid5 : MonoBehaviour
 
     private void Start()
     {
-        jump=FindObjectOfType<ABILITY_Jump>();
-       characterMovement=FindObjectOfType<ABILITY_CharacterMovement>();
-       cameraMovement=FindObjectOfType<ABILITY_CameraMovement>();
+        jump=FindFirstObjectByType<ABILITY_Jump>();
+       characterMovement=FindFirstObjectByType<ABILITY_CharacterMovement>();
+       cameraMovement=FindFirstObjectByType<ABILITY_CameraMovement>();
        
         SetFalseAbilities();
         
-        cursor =FindObjectOfType<Cursorr>().gameObject;
+        cursor =FindFirstObjectByType<Cursorr>().gameObject;
         Cursor.lockState = CursorLockMode.None;
         cursor.SetActive(false);
         StartCoroutine(ChangeColor());
