@@ -60,7 +60,7 @@ public class AdHelper : MonoBehaviour
     public void ShowRewardAd()
     {
       // gm.ShowAd();
-        _levelController.NextLevel();
+     //   _levelController.NextLevel();
 
         /*
 

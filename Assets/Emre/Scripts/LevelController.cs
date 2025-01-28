@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Playgama;
+using Playgama.Modules.Advertisement;
+
 public class LevelController : MonoBehaviour
 {
 
@@ -57,6 +59,12 @@ public class LevelController : MonoBehaviour
         ActivateLevel();
     }
 
+    private void OnEnable()
+    {
+        Bridge.advertisement.interstitialStateChanged += OnInterstitialStateChanged;
+        Bridge.advertisement.rewardedStateChanged += OnRewardedStateChanged;
+
+    }
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -99,15 +107,38 @@ public class LevelController : MonoBehaviour
     public GameObject GetActiveLevel()
     {
         return activeLevel;
+    } 
+   
+    private void OnInterstitialStateChanged(InterstitialState state)
+    {
+        if (state == InterstitialState.Opened)
+        {
+           
+        }
+        if (state == InterstitialState.Closed)
+        {
+            AfterAdNextLevel();
+        }
+        if (state == InterstitialState.Failed)
+        {
+            AfterAdNextLevel(); 
+        }
+        if (state == InterstitialState.Loading)
+        {
+
+        }
+
     }
     public void NextLevel()
     {
-        
+        Bridge.advertisement.ShowInterstitial(); 
+    }
+    void AfterAdNextLevel()
+    {
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
        // Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
-
     }
     public void Restart()
     {
@@ -147,8 +178,35 @@ public class LevelController : MonoBehaviour
 
         }
     }
+    public void ShowRewarded()
+    {
+        Bridge.advertisement.ShowRewarded();
 
+    }
+    private void OnRewardedStateChanged(RewardedState state)
+    {
+        if (state == RewardedState.Rewarded)
+        {
+            SetLewel();
+        }
+        if (state == RewardedState.Opened)
+        {
 
+        }
+        if (state == RewardedState.Closed)
+        {
+
+        }
+        if (state == RewardedState.Failed)
+        {
+
+        }
+        if (state == RewardedState.Loading)
+        {
+
+        }
+
+    }
     public void SetLewel()
     {
         PlayerPrefs.SetInt("Level", Level + 1);

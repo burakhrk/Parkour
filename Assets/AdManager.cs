@@ -26,9 +26,9 @@ public class AdManager : MonoBehaviour
             }
         }
         Bridge.advertisement.SetMinimumDelayBetweenInterstitial(60);
-        ShowIntersitial();
-
+ 
     }
+   
     private void OnEnable()
     {
         Bridge.advertisement.interstitialStateChanged += OnInterstitialStateChanged;

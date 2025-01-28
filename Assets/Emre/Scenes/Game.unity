@@ -512,52 +512,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340378055}
   m_CullTransparentMesh: 1
---- !u!1 &410449657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 410449658}
-  - component: {fileID: 410449659}
-  m_Layer: 0
-  m_Name: AdHelper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &410449658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410449657}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &410449659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410449657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304c67cdce0489b499a95a1f1a57a041, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _adManager: {fileID: 0}
-  _levelController: {fileID: 1717296745}
 --- !u!1 &527884489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,19 +1070,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1717296745}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: SetLewel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 410449659}
-        m_TargetAssemblyTypeName: AdHelper, Assembly-CSharp
-        m_MethodName: ShowRewardAd
+        m_MethodName: ShowRewarded
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2683,7 +2625,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410449659}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AdHelper, Assembly-CSharp
         m_MethodName: ShowIntersAd
         m_Mode: 1
@@ -2828,18 +2770,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410449659}
-        m_TargetAssemblyTypeName: AdHelper, Assembly-CSharp
-        m_MethodName: ShowIntersAd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1717296745}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
         m_MethodName: NextLevel
@@ -5033,7 +4963,6 @@ SceneRoots:
   - {fileID: 192442587}
   - {fileID: 1226346733}
   - {fileID: 589413806}
-  - {fileID: 410449658}
   - {fileID: 1717296746}
   - {fileID: 1213149691}
   - {fileID: 1026331480}
