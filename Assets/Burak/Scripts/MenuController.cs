@@ -66,7 +66,5 @@ public class MenuController : MonoBehaviour
         page1.SetActive(false);
         page2.SetActive(false);
         page3.SetActive(true);
-
-
     }
 }

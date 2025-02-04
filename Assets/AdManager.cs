@@ -62,14 +62,14 @@ public class AdManager : MonoBehaviour
     }
     void AdOpenedState()
     {
-        AudioListener.volume = 0;
+      //  AudioListener.volume = 0;
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 0f;
+       // Time.timeScale = 0f;
     }
     void AdFailedOrClosedState()
     {
-        AudioListener.volume = 1;
-        Time.timeScale = 1f;
+      //  AudioListener.volume = 1;
+       // Time.timeScale = 1f;
 
         // Cursor.lockState = CursorLockMode.Locked;
     }

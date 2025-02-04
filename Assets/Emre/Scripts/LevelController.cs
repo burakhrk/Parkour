@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,219 +8,237 @@ using Playgama.Modules.Advertisement;
 
 public class LevelController : MonoBehaviour
 {
-
     public AudioSource DeathSound;
     public AudioSource WinSound;
-
     public GameObject LWLText;
-
     public GameObject Player;
     public GameObject LosePanel;
     public GameObject WinPanel;
+    public GameObject pausePanel;
+    [SerializeField] SoundToggleButton toggleButton;
     GameObject cursor;
 
-
     bool gameEnd = false;
-    
-    //public List<GameObject> achievements;
-
-    int a;
-    
+    int levelIndex = 0; // levelIndex tanımlandı
+    int Level = 1; // Varsayılan seviye
+    GameObject activeLevel;
+    public TextMeshProUGUI Leveltext;
+    public static bool isGamePlayStarted = false;
 
     [SerializeField] GameObject[] levels;
     [SerializeField] bool playSpecificLevel = false;
-    public int Level;
-    GameObject activeLevel;
-    public TextMeshProUGUI Leveltext;
-   public static bool isGamePlayStarted = false;
+
     private void Awake()
     {
-        cursor=FindFirstObjectByType<Cursorr>().gameObject;
-        if(!isGamePlayStarted)
+        cursor = FindFirstObjectByType<Cursorr>().gameObject;
+        if (!isGamePlayStarted)
         {
             isGamePlayStarted = true;
-            Bridge.platform.SendMessage(Playgama.Modules.Platform.PlatformMessage.GameplayStarted); 
+            Bridge.platform.SendMessage(Playgama.Modules.Platform.PlatformMessage.GameplayStarted);
         }
-        //a = Random.Range(0, achievements.Count);
+    }
+
+    private void Start()
+    {
+        toggleButton.DisappearButton();
+        Cursor.lockState = CursorLockMode.Locked;
+
         if (playSpecificLevel)
         {
             ActivateLevel();
             return;
         }
 
+        // 'Level' verisini yükle
+        Bridge.storage.Get("Level", OnStorageGetCompleted);
+    }
 
-        if (PlayerPrefs.HasKey("Level"))
+    private void OnStorageGetCompleted(bool success, string data)
+    {
+        if (success && !string.IsNullOrEmpty(data))
         {
-            Level = PlayerPrefs.GetInt("Level", 1);
+            Level = int.Parse(data);
         }
         else
-            Level = 1;
+        {
+            Level = 1; // Varsayılan değer
+        }
 
         ActivateLevel();
     }
 
-    private void OnEnable()
-    {
-        Bridge.advertisement.interstitialStateChanged += OnInterstitialStateChanged;
-        Bridge.advertisement.rewardedStateChanged += OnRewardedStateChanged;
+ 
 
-    }
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-
-    }
-
-
-    public int levelIndex;
     void ActivateLevel()
     {
-        string a = " " + Level.ToString();
-        string b = Leveltext.text;
-        Leveltext.text = b + a;
+        Leveltext.text = "Level " + Level.ToString();
 
-        levelIndex = Level % (levels.Length + 1);
+        levelIndex = (Level - 1) % levels.Length; // Hata düzeltildi
 
-
-        if (Level <= levels.Length)
-        {
-            var go = Instantiate(levels[levelIndex - 1]);
-            go.transform.position = levels[levelIndex - 1].transform.position;
-            go.transform.parent = transform;
-            go.SetActive(true);
-            //  levels[levelIndex - 1].SetActive(true);
-            activeLevel = go;
-
-
-        }
-
-        else
-        {
-            var go = Instantiate(levels[levelIndex]);
-            go.transform.parent = transform;
-
-            go.SetActive(true);
-            activeLevel = go;
-
-        }
+        var go = Instantiate(levels[levelIndex]);
+        go.transform.parent = transform;
+        go.SetActive(true);
+        activeLevel = go;
     }
+
     public GameObject GetActiveLevel()
     {
         return activeLevel;
-    } 
-   
+    }
+
     private void OnInterstitialStateChanged(InterstitialState state)
     {
         if (state == InterstitialState.Opened)
         {
-           
+            SoundManager.Instance.MuteForAd();
         }
-        if (state == InterstitialState.Closed)
+        if (state == InterstitialState.Closed || state == InterstitialState.Failed)
         {
             AfterAdNextLevel();
+            SoundManager.Instance.UnmuteAfterAd();
         }
-        if (state == InterstitialState.Failed)
-        {
-            AfterAdNextLevel(); 
-        }
-        if (state == InterstitialState.Loading)
-        {
-
-        }
+        Bridge.advertisement.interstitialStateChanged -= OnInterstitialStateChanged;
 
     }
+
     public void NextLevel()
     {
-        Bridge.advertisement.ShowInterstitial(); 
+
+        Bridge.advertisement.interstitialStateChanged += OnInterstitialStateChanged;
+        Bridge.advertisement.ShowInterstitial();
     }
+
     void AfterAdNextLevel()
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
-       // Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        { ActivatePausePanel();
+        }
     }
     public void Restart()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
-        //LosePanel.SetActive(false);
-        //Cursor.lockState = CursorLockMode.Locked;
         cursor.SetActive(true);
-
     }
+
     public void LoadMenu()
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
     }
+   public void ActivatePausePanel()
+    {
+        pausePanel.SetActive(true);
+        cursor.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
 
+        Time.timeScale = 0f;
+        toggleButton.VisibleButton();
 
+    }
+    public void DisablePausePanel()
+    {
+        pausePanel.SetActive(false);
+        cursor.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
 
+        Time.timeScale = 1f;
+        toggleButton.DisappearButton();
+
+    }
     public void LosePanelActivate()
     {
         DeathSound.Play();
         LWLText.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
-        
         Time.timeScale = 0f;
-        cursor.SetActive(false );
+        cursor.SetActive(false);
         LosePanel.SetActive(true);
         gameEnd = true;
+        toggleButton.VisibleButton();
     }
 
     private void OnApplicationFocus(bool focus)
     {
-        if (focus&& gameEnd)
+        if (focus && gameEnd)
         {
-        
             Cursor.lockState = CursorLockMode.None;
-
         }
     }
+
     public void ShowRewarded()
     {
+        Bridge.advertisement.rewardedStateChanged += OnRewardedStateChanged;
         Bridge.advertisement.ShowRewarded();
-
     }
+
     private void OnRewardedStateChanged(RewardedState state)
     {
         if (state == RewardedState.Rewarded)
         {
-            SetLewel();
+            SetLevel();
+            Debug.Log("reward");
+            SoundManager.Instance.UnmuteAfterAd();
         }
         if (state == RewardedState.Opened)
         {
-
+            SoundManager.Instance.MuteForAd();
         }
-        if (state == RewardedState.Closed)
+        if (state == RewardedState.Closed || state == RewardedState.Failed)
         {
+            Cursor.lockState = CursorLockMode.None;
+            cursor.SetActive(false);
+            SoundManager.Instance.UnmuteAfterAd();
+            Debug.Log("reward failed or closed");
 
-        }
-        if (state == RewardedState.Failed)
-        {
-
-        }
-        if (state == RewardedState.Loading)
-        {
-
-        }
-
+        } 
+        Bridge.advertisement.rewardedStateChanged -= OnRewardedStateChanged; 
     }
-    public void SetLewel()
+
+    public void SetLevel()
     {
-        PlayerPrefs.SetInt("Level", Level + 1);
+        Level += 1;
 
-        if(PlayerPrefs.GetInt("LevelUnlocked",1)<Level+1)
+        // 'Level' verisini kaydet
+        Bridge.storage.Set("Level", Level.ToString(), OnStorageSetCompleted);
+
+        // Kilidi açılan en yüksek seviyeyi güncelle
+        Bridge.storage.Get("LevelUnlocked", OnLevelUnlockedGetCompleted);
+    }
+
+    private void OnStorageSetCompleted(bool success)
+    {
+        if (!success)
         {
-            PlayerPrefs.SetInt("LevelUnlocked",Level+1);
+            Debug.LogError("Veri kaydedilirken hata oluştu.");
         }
     }
 
+    private void OnLevelUnlockedGetCompleted(bool success, string data)
+    {
+        if (success && !string.IsNullOrEmpty(data))
+        {
+            int levelUnlocked = int.Parse(data);
+            if (levelUnlocked < Level)
+            {
+                Bridge.storage.Set("LevelUnlocked", Level.ToString(), OnStorageSetCompleted);
+            }
+        }
+        else
+        {
+            Bridge.storage.Set("LevelUnlocked", Level.ToString(), OnStorageSetCompleted);
+        }
+    }
 
     public void ActivateWinPanel()
     {
-        SetLewel();
+        SetLevel();
 
         gameEnd = true;
 
@@ -228,13 +246,10 @@ public class LevelController : MonoBehaviour
         WinSound.Play();
         cursor.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
-        
 
         Time.timeScale = 0f;
-        //StartCoroutine(ActivateAchievements());
-        cursor.SetActive(false);
 
-        WinPanel.SetActive(true);   
+        WinPanel.SetActive(true);
+        toggleButton.VisibleButton();
     }
-
 }

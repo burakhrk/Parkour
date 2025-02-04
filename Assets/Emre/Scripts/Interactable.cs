@@ -14,8 +14,7 @@ public class Interactable : MonoBehaviour
    
 
     public void Interact()
-     {
-      
+    { 
         InteractableObj1();
     }
 
@@ -36,8 +35,7 @@ public class Interactable : MonoBehaviour
 
                 Debug.Log("1");
                 asd = true ;
-            }
-            
+            } 
         }
         else
         {
@@ -48,13 +46,6 @@ public class Interactable : MonoBehaviour
 
                 Debug.Log("1");
             }
-        }
-      
-        
-    }
-
-
-   
-
-
+        } 
+    } 
 }
